@@ -85,7 +85,7 @@ Yes, please!
 Thank you!
 
 * [tomjnsn](https://github.com/tomjnsn) Tom Jensen
-* [ebusinessdirect](https://github.com/ebusinessdirect/mws-simple)
+* [ebusinessdirect](https://github.com/ebusinessdirect/mws-simple) ebusinessdirect
 
 ## License
 
