@@ -6,7 +6,8 @@ which means that you will have to do more work in order to make api calls but gi
 
 Defaults to US marketplace settings, but can code to override default
 
-> This is a forked project from [mws-simple](https://github.com/ebusinessdirect/mws-simple)
+> This is a forked project from [mws-simple](https://github.com/ebusinessdirect/mws-simple).
+> The module doesn't work in Node.js, but support browsers.
 
 ## Installation
 
