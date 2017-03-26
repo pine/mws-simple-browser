@@ -1,13 +1,16 @@
-# mws-simple
+# mws-simple-browser
 
-nodejs Amazon MWS API in 100 lines of code
+browser Amazon MWS API in 100 lines of code
 
 which means that you will have to do more work in order to make api calls but gives you the most control.  Response uses xml2js or csv-parse for conversion.
 
 Defaults to US marketplace settings, but can code to override default
+
+> This is a forked project from [mws-simple](https://github.com/ebusinessdirect/mws-simple)
+
 ## Installation
 
-npm install mws-simple
+npm install mws-simple-browser
 
 ## Usage
 
@@ -82,6 +85,7 @@ Yes, please!
 Thank you!
 
 * [tomjnsn](https://github.com/tomjnsn) Tom Jensen
+* [ebusinessdirect](https://github.com/ebusinessdirect/mws-simple)
 
 ## License
 
