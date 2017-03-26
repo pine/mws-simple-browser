@@ -1,19 +1,15 @@
 /*
- * mws-simple.js: nodejs Amazon MWS API in 100 lines of code
+ * mws-simple-browser.js: browser Amazon MWS API in 100 lines of code
  */
 'use strict';
 let crypto = require('crypto');
-let request = require('request');
+let request = require('browser-request');
 let xmlParser = require('xml2js').parseString;
 let tabParser = require('csv-parse');
 let qs = require('query-string');
 
 // Client is the class constructor
 module.exports = Client;
-
-// Used for User-Agent header
-let appId = 'mws-simple';
-let appVersionId = '1.0.0';
 
 function Client(opts) {
   // force 'new' constructor
@@ -57,18 +53,8 @@ Client.prototype.request = function(requestData, callback) {
 
   let options = {
     url: 'https://' + this.host + ':' + this.port + requestData.path,
-    headers: {
-      Host: this.host,
-    },
+    headers: {},
     qs: requestData.query
-  }
-
-  // Use specified User-Agent or assume one
-  if (requestData.headers && requestData.headers['User-Agent']) {
-    options.headers['User-Agent'] = requestData.headers['User-Agent'];
-  } else {
-    // http://docs.developer.amazonservices.com/en_US/dev_guide/DG_ClientLibraries.html (Creating the User-Agent header)
-    options.headers['User-Agent'] = appId + '/' + appVersionId + ' (Language=JavaScript)';
   }
 
   // Use specified Content-Type or assume one
@@ -94,7 +80,7 @@ Client.prototype.request = function(requestData, callback) {
   request.post(options, function (error, response, body) {
     if (error) return callback(error);
 
-    if (response.headers.hasOwnProperty('content-type') && response.headers['content-type'].startsWith('text/xml')) {
+    if (response.body.slice(0, 5) === '<?xml') {
       // xml2js
       xmlParser(body, function (err, result) {
         callback(err, result);
