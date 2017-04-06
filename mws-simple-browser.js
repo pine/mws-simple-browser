@@ -2,11 +2,11 @@
  * mws-simple-browser.js: browser Amazon MWS API in 100 lines of code
  */
 'use strict';
-let crypto = require('crypto');
-let request = require('browser-request');
-let xmlParser = require('xml2js').parseString;
-let tabParser = require('csv-parse');
-let qs = require('query-string');
+var crypto = require('crypto');
+var request = require('browser-request');
+var xmlParser = require('xml2js').parseString;
+var tabParser = require('csv-parse');
+var qs = require('query-string');
 
 // Client is the class constructor
 module.exports = Client;
@@ -48,10 +48,10 @@ Client.prototype.request = function(requestData, callback) {
   requestData.query.SignatureMethod = 'HmacSHA256';
   requestData.query.SignatureVersion = '2';
   // qs.stringify will sorts the keys and url encode
-  let stringToSign = ["POST", this.host, requestData.path, qs.stringify(requestData.query)].join('\n');
+  var stringToSign = ["POST", this.host, requestData.path, qs.stringify(requestData.query)].join('\n');
   requestData.query.Signature = crypto.createHmac('sha256', this.secretAccessKey).update(stringToSign).digest('base64');
 
-  let options = {
+  var options = {
     url: 'https://' + this.host + ':' + this.port + requestData.path,
     headers: {},
     qs: requestData.query
