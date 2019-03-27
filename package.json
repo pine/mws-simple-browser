@@ -5,8 +5,8 @@
   "main": "mws-simple-browser.js",
   "dependencies": {
     "browser-request": "^0.3.3",
-    "csv-parse": "^1.1.1",
-    "query-string": "^4.1.0",
+    "csv-parse": "^4.3.4",
+    "query-string": "^6.4.2",
     "xml2js": "^0.4.16"
   },
   "devDependencies": {},
