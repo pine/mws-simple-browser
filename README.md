@@ -1,5 +1,7 @@
 # mws-simple-browser
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pine/mws-simple-browser.svg)](https://greenkeeper.io/)
+
 browser Amazon MWS API in 100 lines of code
 
 which means that you will have to do more work in order to make api calls but gives you the most control.  Response uses xml2js or csv-parse for conversion.
