@@ -1,3 +1,9 @@
+# DEPRECATED
+
+:warning: This package is no longer maintained.
+
+---
+
 # mws-simple-browser
 
 browser Amazon MWS API in 100 lines of code
